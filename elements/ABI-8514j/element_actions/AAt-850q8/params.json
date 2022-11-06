@@ -1,0 +1,19 @@
+{
+    "caption": "Log the Xano user in via",
+    "fields": {
+        "AAu": {
+            "caption": "email",
+            "editor": "DynamicValue",
+            "name": "email",
+            "rank": 0,
+            "value": "text"
+        },
+        "AAv": {
+            "caption": "password",
+            "editor": "DynamicValue",
+            "name": "password",
+            "rank": 1,
+            "value": "text"
+        }
+    }
+}

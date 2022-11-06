@@ -1,0 +1,92 @@
+{
+    "add_is_visible": true,
+    "category": "visual elements",
+    "default_dim": {
+        "height": 20,
+        "width": 20
+    },
+    "display": "Xano Auth",
+    "events": {
+        "AAx": {
+            "caption": "user is logged in",
+            "name": "is_logged_in"
+        },
+        "AAy": {
+            "caption": "user is logged out",
+            "name": "is_logged_out"
+        },
+        "AAz": {
+            "caption": "threw an error",
+            "name": "threw_an_error"
+        }
+    },
+    "icon": "ion-android-checkbox-blank",
+    "states": {
+        "ABB": {
+            "caption": "AuthToken",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n   return localStorage.getItem('AuthToken')\n\n\n}"
+            },
+            "name": "authToken",
+            "value": "text"
+        },
+        "ABC": {
+            "caption": "First name",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n    \n  return JSON.parse(localStorage.getItem('xano_object')).nameFirst;\n\n\n\n}"
+            },
+            "name": "name_first",
+            "value": "text"
+        },
+        "ABD": {
+            "caption": "Last name",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n\treturn JSON.parse(localStorage.getItem('xano_object')).lastName;\n\n}"
+            },
+            "name": "name_last",
+            "value": "text"
+        },
+        "ABE": {
+            "caption": "Email",
+            "doc": "",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n\treturn JSON.parse(localStorage.getItem('xano_object')).email;\n\n}"
+            },
+            "name": "email",
+            "value": "text"
+        },
+        "ABF": {
+            "caption": "is logged in",
+            "doc": "",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n    \n    let user = localStorage.getItem('AuthToken')\n    \n    return !user === false\n\n}"
+            },
+            "name": "is_logged_in",
+            "value": "boolean"
+        },
+        "ABG": {
+            "caption": "Error message",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n\n\n}"
+            },
+            "name": "error_message",
+            "value": "text"
+        },
+        "ABH": {
+            "caption": "Error code",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n\n\n}"
+            },
+            "name": "error_code",
+            "value": "text"
+        },
+        "ABM": {
+            "caption": "Status code",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n\n\n}"
+            },
+            "name": "status_code",
+            "value": "number"
+        }
+    }
+}

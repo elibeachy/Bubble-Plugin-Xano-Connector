@@ -1,0 +1,33 @@
+{
+    "category": "plugins",
+    "display": "Set the Xano auth token",
+    "fields": {
+        "ACB": {
+            "caption": "Auth Token",
+            "editor": "DynamicValue",
+            "long_text": true,
+            "name": "auth_token",
+            "rank": 3,
+            "value": "text"
+        },
+        "ACC": {
+            "caption": "If you are using an email/password authentication method it’s better to use the actions on the Xano auth element to manage user signup and login. This action is designed to set the auth token manually if you are allowing your users to login via SSO such as Google or Facebook. ",
+            "editor": "Label",
+            "name": "information",
+            "rank": 0
+        },
+        "ACD": {
+            "caption": "PLEASE NOTE: You will need to create the login flow for each SSO in your Xano instance and then set the auth token from Xano here when you receive it.",
+            "editor": "Label",
+            "name": "information",
+            "rank": 1
+        },
+        "ACE": {
+            "caption": "PLEASE NOTE: Events such as ‘user is logged in’ will be triggered on the Xano Auth element when running this action.",
+            "editor": "Label",
+            "name": "information",
+            "rank": 2
+        }
+    },
+    "type": "client_side"
+}

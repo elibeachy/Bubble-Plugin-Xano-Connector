@@ -1,0 +1,22 @@
+{
+    "assets": {
+        "ACG": {
+            "name": "xano_logo",
+            "url": "//dd7tel2830j4w.cloudfront.net/f1667759569680x564674594487359940/xano_logo.webp"
+        }
+    },
+    "dependencies": {
+        "plugin_api_version": 3,
+        "use_jquery": true
+    },
+    "shared_keys": {
+        "ABJ": {
+            "caption": "Group URL",
+            "type": "client_safe"
+        },
+        "ABk": {
+            "caption": "data-source",
+            "type": "client_safe"
+        }
+    }
+}

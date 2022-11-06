@@ -1,0 +1,35 @@
+{
+    "caption": "Sign the Xano user up via",
+    "fields": {
+        "AAp": {
+            "caption": "Email",
+            "editor": "DynamicValue",
+            "name": "email",
+            "rank": 2,
+            "value": "text"
+        },
+        "AAq": {
+            "caption": "Password",
+            "editor": "DynamicValue",
+            "name": "password",
+            "rank": 3,
+            "value": "text"
+        },
+        "AAr": {
+            "caption": "First name",
+            "editor": "DynamicValue",
+            "name": "name_first",
+            "optional": true,
+            "rank": 0,
+            "value": "text"
+        },
+        "AAs": {
+            "caption": "Last name",
+            "editor": "DynamicValue",
+            "name": "name_last",
+            "optional": true,
+            "rank": 1,
+            "value": "text"
+        }
+    }
+}
