@@ -48,7 +48,7 @@
         }
     },
     "has_reset_fn": false,
-    "icon": "ion-android-checkbox-blank",
+    "icon": "ion-android-list",
     "states": {
         "ABP": {
             "caption": "Data",

@@ -48,7 +48,7 @@
             "value": "text"
         }
     },
-    "icon": "ion-android-checkbox-blank",
+    "icon": "ion-ios-folder",
     "states": {
         "ABT": {
             "caption": "Data",

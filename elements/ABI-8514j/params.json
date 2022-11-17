@@ -20,7 +20,7 @@
             "name": "threw_an_error"
         }
     },
-    "icon": "ion-android-checkbox-blank",
+    "icon": "ion-ios-contact",
     "states": {
         "ABB": {
             "caption": "AuthToken",
