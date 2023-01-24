@@ -1,0 +1,30 @@
+{
+    "caption": "Trigger",
+    "fields": {
+        "ACN": {
+            "caption": "Endpoint",
+            "editor": "DynamicValue",
+            "name": "endpoint",
+            "rank": 1,
+            "value": "text"
+        },
+        "ACO": {
+            "caption": "Parameters",
+            "doc": "This should be a valid JSON object containing the parameters your endpoint is expecting to receive.",
+            "editor": "DynamicValue",
+            "long_text": true,
+            "name": "params",
+            "optional": true,
+            "rank": 2,
+            "value": "text"
+        },
+        "ACe": {
+            "caption": "Method",
+            "default_val": "POST",
+            "editor": "Dropdown",
+            "name": "method",
+            "options": "GET,POST,PUT,PATCH,DELETE,HEAD",
+            "rank": 0
+        }
+    }
+}

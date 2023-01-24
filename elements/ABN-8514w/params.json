@@ -29,10 +29,11 @@
             "value": "text"
         },
         "ABt": {
-            "caption": "Body JSON",
+            "caption": "Parameters",
+            "doc": "This should be a valid JSON object containing the parameters your endpoint is expecting to receive.",
             "editor": "DynamicValue",
             "long_text": true,
-            "name": "body_json",
+            "name": "parameters",
             "optional": true,
             "rank": 3,
             "value": "text"

@@ -5,72 +5,59 @@
         "height": 20,
         "width": 20
     },
-    "display": "Xano Get",
+    "display": "Xano Action",
     "events": {
-        "ABi": {
+        "ACP": {
+            "caption": "returns a response",
+            "name": "postResult"
+        },
+        "ACZ": {
             "caption": "throws an error",
             "name": "threw_an_error"
         }
     },
     "fields": {
-        "ABR": {
+        "ACS": {
             "caption": "Data type",
             "editor": "custom_type",
-            "name": "data_type",
-            "optional": false,
+            "name": "returntype",
             "rank": 0
         },
-        "ABS": {
-            "caption": "Endpoint",
-            "default_val": "",
-            "editor": "DynamicValue",
-            "name": "endpoint",
-            "optional": false,
-            "rank": 1,
-            "value": "text"
-        },
-        "ABV": {
-            "caption": "Record ID",
-            "default_val": "",
-            "editor": "DynamicValue",
-            "name": "record_id",
-            "optional": true,
-            "rank": 3,
-            "value": "text"
-        },
-        "ABy": {
+        "ACg": {
             "caption": "Group URL",
             "doc": "OPTIONAL: Populate if the group url for the endpoint you are call is different than the one set in the plugin settings page",
             "editor": "DynamicValue",
             "long_text": true,
             "name": "group_url",
             "optional": true,
-            "rank": 2,
-            "value": "text"
-        },
-        "ACh": {
-            "caption": "Parameters",
-            "doc": "This should be a valid JSON object containing the parameters your endpoint is expecting to receive.",
-            "editor": "DynamicValue",
-            "long_text": true,
-            "name": "parameters",
-            "optional": true,
-            "rank": 4,
+            "rank": 1,
             "value": "text"
         }
     },
-    "icon": "ion-ios-folder",
+    "icon": "ion-ios-compose",
+    "property_applications": {
+        "MinWidth": true,
+        "resizable": true
+    },
     "states": {
-        "ABT": {
-            "caption": "Data",
+        "ACT": {
+            "caption": "returned thing",
             "initialization_code": {
                 "fn": "function(properties, context) {\n\n\n\n}"
             },
-            "is_list": false,
-            "name": "data",
-            "value": "custom_data_ABR"
+            "name": "return_thing",
+            "value": "custom_data_ACS"
         },
-        "ABf": {
+        "ACU": {
+            "caption": "returned array",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n\n\n}"
+            },
+            "is_list": true,
+            "name": "return_array",
+            "value": "custom_data_ACS"
+        },
+        "ACa": {
             "caption": "Error message",
             "initialization_code": {
                 "fn": "function(properties, context) {\n\n\n\n}"
@@ -78,7 +65,7 @@
             "name": "error_message",
             "value": "text"
         },
-        "ABg": {
+        "ACb": {
             "caption": "Error code",
             "initialization_code": {
                 "fn": "function(properties, context) {\n\n\n\n}"
@@ -86,7 +73,7 @@
             "name": "error_code",
             "value": "text"
         },
-        "ABh": {
+        "ACc": {
             "caption": "Status code",
             "initialization_code": {
                 "fn": "function(properties, context) {\n\n\n\n}"
@@ -94,8 +81,8 @@
             "name": "status_code",
             "value": "number"
         },
-        "ABz": {
-            "caption": "Raw JSON body",
+        "ACd": {
+            "caption": "raw_json_body",
             "initialization_code": {
                 "fn": "function(properties, context) {\n\n\n\n}"
             },

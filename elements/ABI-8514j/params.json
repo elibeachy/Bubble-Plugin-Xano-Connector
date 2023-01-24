@@ -25,7 +25,7 @@
         "ABB": {
             "caption": "AuthToken",
             "initialization_code": {
-                "fn": "function(properties, context) {\n\n   return localStorage.getItem('AuthToken')\n\n\n}"
+                "fn": "function(properties, context) {\n\n    try {\n\n        return localStorage.getItem('AuthToken')\n\n    } catch(err) {\n\n    }\n\n\n}"
             },
             "name": "authToken",
             "value": "text"
@@ -33,7 +33,7 @@
         "ABC": {
             "caption": "First name",
             "initialization_code": {
-                "fn": "function(properties, context) {\n    \n  return JSON.parse(localStorage.getItem('xano_object')).nameFirst;\n\n\n\n}"
+                "fn": "function(properties, context) {\n\n    try {\n\n        return localStorage.getItem('xano_object').nameFirst\n\n    } catch(err) {\n\n    }\n\n\n\n}"
             },
             "name": "name_first",
             "value": "text"
@@ -41,7 +41,7 @@
         "ABD": {
             "caption": "Last name",
             "initialization_code": {
-                "fn": "function(properties, context) {\n\n\treturn JSON.parse(localStorage.getItem('xano_object')).lastName;\n\n}"
+                "fn": "function(properties, context) {\n\n    try {\n\n        return JSON.parse(localStorage.getItem('xano_object')).lastName;\n\n    } catch(err) {\n\n    }\n\n}"
             },
             "name": "name_last",
             "value": "text"
@@ -50,7 +50,7 @@
             "caption": "Email",
             "doc": "",
             "initialization_code": {
-                "fn": "function(properties, context) {\n\n\treturn JSON.parse(localStorage.getItem('xano_object')).email;\n\n}"
+                "fn": "function(properties, context) {\n\n    try {\n\n        return JSON.parse(localStorage.getItem('xano_object')).email;\n\n    } catch(err) {\n\n    }\n\n}"
             },
             "name": "email",
             "value": "text"
@@ -59,7 +59,7 @@
             "caption": "is logged in",
             "doc": "",
             "initialization_code": {
-                "fn": "function(properties, context) {\n    \n    let user = localStorage.getItem('AuthToken')\n    \n    return !user === false\n\n}"
+                "fn": "function(properties, context) {\n\n    try {\n\n        let user = localStorage.getItem('AuthToken')\n\n        return !user === false\n\n    } catch(err) {\n\n    }\n\n}"
             },
             "name": "is_logged_in",
             "value": "boolean"

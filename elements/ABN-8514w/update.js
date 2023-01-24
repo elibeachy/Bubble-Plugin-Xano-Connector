@@ -10,16 +10,22 @@ function(instance, properties, context) {
         
     }
     
-    data.endpoint = properties.endpoint;
+    // Check if endpoint starts with / and add one if it doesn't
+    if (properties.endpoint[0] !== "/") {
+        data.endpoint = `/${properties.endpoint}`
+    } else {
+        data.endpoint = properties.endpoint;
+    }
+    
     data.returnDataType = !properties.data_type === false;
     
-    if (properties.body_json) {
+    if (properties.parameters) {
         
-        data.body = JSON.parse(properties.body_json);
+        data.params = JSON.parse(properties.parameters);
         
     } else {
         
-        data.body = {}
+        data.params = {}
         
     }
     

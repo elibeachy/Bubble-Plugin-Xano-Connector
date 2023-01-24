@@ -17,17 +17,17 @@ function(instance, context) {
 
     }
 
-    data.get = function(endpoint,id){
-        
-        data.xano.get(endpoint + '/' + id,{}).then(
+    data.get = function(endpoint, params){
+
+        data.xano.get(endpoint, params).then(
             // Success
             function(res) {
 
-                const body = res.getBody('_api_c2_');
+                console.log(res.getBody());
 
-                context.reportDebugger(body);
-
-                !data.returnDataType ? '' : publish('data',body);
+                let body = res.getBody('_api_c2_');
+                
+                publish('data', flattenObj(body));
                 publish('raw_json_body',JSON.stringify(res.getBody()));
             },
 
@@ -52,6 +52,43 @@ function(instance, context) {
         )
     }
 
+    // Flatten response to what Bubble is expectiing
+    function flattenObj(data, parent = null) {
+        // Create an empty object .
+        let dataMap = {};
+        // Loop over the data object that was given .
+        for (const key in data) {
+            // Set a key name by checking if parent was set by previous recursive calls .
+            const keyName = parent ? parent + "." + key.replace("_api_c2_", "") : key;
+            // Check the data type.
+            if (typeof data[key] === "object" && !Array.isArray(data[key])) {
+                // Using ES6 "Spread Operator" i overwrite the dataMap object with:
+                // current dataMap + returned object result of the recurive call .
+                dataMap = {
+                    ...dataMap,
+                    ...flattenObj(data[key], keyName)
+                };
+            } else if (typeof data[key] === "object" && Array.isArray(data[key])) {
+                // Using ES6 "Spread Operator" i overwrite the dataMap object with:
+                // current dataMap + returned object result of the recurive call .
+                let array = [];
+                data[key].map((x) => {
+                    if (typeof x === "object") {
+                        array.push(flattenObj(x));
+                    } else {
+                        array.push(x);
+                    }
+                });
+                dataMap[keyName] = array;
+            } else {
+                // If data type is anything but an object append the "key: value" .
+                dataMap[keyName] = data[key];
+            }
+        }
+        return dataMap;
+    }
+
+    data.flattenObj = flattenObj;
 
 
 }

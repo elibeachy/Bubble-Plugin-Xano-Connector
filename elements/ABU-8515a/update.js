@@ -10,20 +10,34 @@ function(instance, properties, context) {
 
     }
 
-    data.endpoint = properties.endpoint;
-    data.returnDataType = !properties.data_type === false;
-    data.recordId = properties.record_id;
+    // Check if endpoint starts with / and add one if it doesn't
+    if (properties.endpoint[0] !== "/") {
+        data.endpoint = `/${properties.endpoint}`
+    } else {
+        data.endpoint = properties.endpoint;
+    }
     
+    // Check if a record id exists and append to the endpoint
     if (!properties.record_id == false) {
+        data.endpoint = `${data.endpoint}/${properties.record_id}`
+    }
+    
+    data.returnDataType = !properties.data_type === false;
+    
+    if (properties.parameters) {
         
-        data.get(properties.endpoint, properties.record_id);
+        data.params = JSON.parse(properties.parameters);
         
     } else {
         
-        publish('data');
-        publish('raw_json_body');
+        data.params = {}
         
     }
+    
+    
+    data.get(data.endpoint, data.params);
+        
+
 
 
 

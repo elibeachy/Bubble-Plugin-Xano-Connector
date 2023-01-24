@@ -1,6 +1,12 @@
 function(properties, context) {
 
-   return localStorage.getItem('AuthToken')
+    try {
+
+        return localStorage.getItem('AuthToken')
+
+    } catch(err) {
+
+    }
 
 
 }

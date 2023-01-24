@@ -1,6 +1,12 @@
 function(properties, context) {
-    
-  return JSON.parse(localStorage.getItem('xano_object')).nameFirst;
+
+    try {
+
+        return localStorage.getItem('xano_object').nameFirst
+
+    } catch(err) {
+
+    }
 
 
 
