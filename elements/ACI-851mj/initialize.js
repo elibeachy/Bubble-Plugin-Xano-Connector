@@ -194,9 +194,9 @@ function(instance, context) {
 
     // Publish error data for all method types
     function processError(body, status) {
-		console.log(body)
+		// console.log(body)
         context.reportDebugger(body.message);
-        console.log(body.message)
+        // console.log(body.message)
         publish("return_array", null);
         publish("return_thing", null);
         
@@ -205,6 +205,17 @@ function(instance, context) {
         publish('error_code', body.code);
         publish('status_code', status);
         trigger('threw_an_error');
+    }
+    
+    data.reset = function(){
+            
+        publish("return_array", null);	
+        publish("return_thing", null);
+        publish("raw_json_body", null);
+        publish('error_message', null);
+        publish('error_code', null);
+        publish('status_code', null);
+        
     }
 
 

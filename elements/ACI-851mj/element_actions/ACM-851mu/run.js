@@ -12,7 +12,7 @@ function(instance, properties, context) {
     }
 
 
-    console.log(properties.method)
+    // console.log(properties.method)
 
 
     switch(properties.method) {
